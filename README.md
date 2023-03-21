@@ -7,60 +7,176 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+### Instale as Dependencias com:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+composer install
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Crie Seu Banco de Dados:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* Crie o Arquivo .env na raiz do projeto
+* Copie os valores da .env.example e coloque no arquivo .env
+* e coloque o nome do banco que criou na váriavel do env chamada:
+* DB_DATABASE
+* e suas credencias do seu banco de dados nas váriaveis:
+* DB_USERNAME=seuusuario
+* DB_PASSWORD=suasenha
 
-## Learning Laravel
+* Após configurar rode os seguintes comandos:
+``` 
+php artisan migrate 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+php artisan db:seed
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```
+Vai subir as tabelas, e fazer o seed.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Configure o SMTP do Email:
 
-## Laravel Sponsors
+* Entre no Site do MailTrap:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* <a href="https://mailtrap.io/">MailTrap</a>
 
-### Premium Partners
+* Clique em Sign up for free:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![image](https://user-images.githubusercontent.com/54550561/226718288-dc86ff8e-17f9-498b-a7a5-99784122771c.png)
 
-## Contributing
+Escolha como quer se Cadastrar
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![image](https://user-images.githubusercontent.com/54550561/226718143-7d8cdca7-9214-4cf8-8c90-9c1d7d33ea5a.png)
 
-## Code of Conduct
+Clique em Email Testing:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![image](https://user-images.githubusercontent.com/54550561/226718915-509a26ab-d237-48e5-aa15-6b633bffc3a6.png)
 
-## Security Vulnerabilities
+Clique em Add Inbox:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![image](https://user-images.githubusercontent.com/54550561/226719152-a47faecd-dbab-49e4-b092-2c494d8682f8.png)
 
-## License
+Escolhe o nome do inbox e clique em salvar:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![image](https://user-images.githubusercontent.com/54550561/226719230-5d690197-f56c-4774-a6a7-5816db6916c9.png)
+
+Com o inbox salvo, clique na engrenagem:
+
+![image](https://user-images.githubusercontent.com/54550561/226719521-f5cb0407-8806-48e1-94c6-d8a86fc8dd44.png)
+
+Vai abrir essa tela:
+
+![image](https://user-images.githubusercontent.com/54550561/226719654-7c55733d-dd80-44b1-bb72-5f0fc98c29ad.png)
+
+Clique no select abaixo de Integrations:
+
+![image](https://user-images.githubusercontent.com/54550561/226719892-b541baba-b9f6-4d5a-8026-18ffba29ef5b.png)
+
+e Escolha a Opção: Laravel 7+:
+
+![image](https://user-images.githubusercontent.com/54550561/226720140-cb0d5358-2a12-48b3-8652-30d207617870.png)
+
+Copie todos esses Valores que estão abaixo:
+![image](https://user-images.githubusercontent.com/54550561/226720306-5d6976f5-7e3a-4930-9c8a-483ef16999d9.png)
+
+Deve Ficar Desse Jeito:
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=2fa213214a58171
+MAIL_PASSWORD=104e1241209096
+MAIL_ENCRYPTION=tls
+
+```
+
+Após Copiar Substitue eles no .env:
+
+![image](https://user-images.githubusercontent.com/54550561/226720822-5891e361-befd-49ac-b2f7-8ec84f0dcf37.png)
+
+E ao cadastrar uma despesa, você receberá o Email dentro do MailTrap:
+
+![image](https://user-images.githubusercontent.com/54550561/226721338-35fdf277-250b-4bfe-bba2-6bae6adb7521.png)
+
+![image](https://user-images.githubusercontent.com/54550561/226721721-84d623d7-8857-4a5a-80e4-9293c0270f2c.png)
+
+Após isso já pode rodar o seguinte comando:
+
+``` 
+php artisan serve
+```
+
+Para iniciar o Servidor
+
+e abra outra janela do terminal/cmd e rode o comando:
+
+``` 
+php artisan queue:work
+```
+
+para rodar os testes:
+
+``` 
+php artisan test
+```
+
+Para observar as notificações recebidas, e disparar o email.
+
+
+Agora vamos criar o usuário:
+
+Com as Endpoints fornecidos, faça a Requisição no Endpoint Register:
+
+![image](https://user-images.githubusercontent.com/54550561/226723866-1cff185b-b667-4c94-aa4f-6210cad31b77.png)
+
+Retornou o Usuário que foi Salvo, e vamos fazer o seguinte agora, copiar o token que ele gerou:
+
+![image](https://user-images.githubusercontent.com/54550561/226724155-7ae63a76-c405-4414-989c-423f97c0dc57.png)
+
+Após copiarmos o token que foi gerado,
+
+ele deverá estar assim: 
+
+```
+96|iY3Mmx2DSS8Ly5qIuvJqD07zZmYkLs612wiQh3T7
+```
+
+Iremos no Endpoint: Criar Despesa
+
+![image](https://user-images.githubusercontent.com/54550561/226724888-63d18c74-275d-4d0a-bf01-41f07ff44cbb.png)
+
+Vamos adicionar o token que copiamos anteriormente.
+
+Clique em auth do lado de JSON,
+Clique em BearerToken
+
+![image](https://user-images.githubusercontent.com/54550561/226725174-dec0e18c-8e47-4527-8ab1-8adaeea50370.png)
+
+e cole o token que copiamos anteriormente em token:
+
+![image](https://user-images.githubusercontent.com/54550561/226725498-3f3d5280-5a5a-483d-a700-dfa79e4086d5.png)
+
+Após fazer isso já podemos clique em Send para cadastrar a Despesa:
+
+![image](https://user-images.githubusercontent.com/54550561/226725847-b3bd24e1-5a4d-41ad-b0e5-0fe59f56d6ac.png)
+
+e já cadastrou a despesa.
+
+e para todos os outros endpoints de Despesa, temos que adicionar o token:
+
+![image](https://user-images.githubusercontent.com/54550561/226726142-d1e05318-1dc8-4f92-8120-75a8b033e36b.png)
+
+e Após cadastrar a nossa despesa, ele já aparece no Endpoint Get Despesas:
+
+![image](https://user-images.githubusercontent.com/54550561/226726421-c4614554-077f-46dc-b19e-eee491cf458f.png)
+
+
+### Endpoints estão no repositório, tanto pro insomnia, quanto pro postman.
+
+
+<a href="">
+    Endpoints Insomnia
+</a>
+
+<a href="">
+    Endpoints Postman
+</a>

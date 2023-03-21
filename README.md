@@ -171,12 +171,3 @@ e Após cadastrar a nossa despesa, ele já aparece no Endpoint Get Despesas:
 
 
 ### Endpoints estão no repositório, tanto pro insomnia, quanto pro postman.
-
-
-<a href="">
-    Endpoints Insomnia
-</a>
-
-<a href="">
-    Endpoints Postman
-</a>
